@@ -110,7 +110,7 @@ export default (app) => {
       const signedUrlExpireSeconds = 60 * 5;
 
       const url = s3.getSignedUrl("getObject", {
-        Bucket: BUCKET_NAME,
+        Bucket: process.env.BUCKET_NAME,
         Key: "cat.jpg",
         Expires: signedUrlExpireSeconds,
       });
